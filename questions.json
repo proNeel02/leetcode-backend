@@ -1,0 +1,79 @@
+[
+    {
+        "question": {
+            "title": "Reverse an array",
+            "description": "Given a array, return the reverse of it",
+            "tescases": [
+                {
+                    "input": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ],
+                    "output": [
+                        6,
+                        5,
+                        4,
+                        3,
+                        2,
+                        1
+                    ]
+                }
+            ]
+        },
+        "id": 0
+    },
+    {
+        "question": {
+            "title": "find the max element from the array",
+            "description": "Given a array, return the maximum of it",
+            "tescases": [
+                {
+                    "input": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ],
+                    "output": 6
+                }
+            ]
+        },
+        "id": 1
+    },
+    {
+        "question": {
+            "title": "find the middle element of an array",
+            "description": "Given a array, return the middle element",
+            "tescases": [
+                {
+                    "input": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ],
+                    "output": 3
+                },
+                {
+                    "input": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ],
+                    "output": 3
+                }
+            ]
+        },
+        "id": 2
+    }
+]
