@@ -47,6 +47,7 @@ app.post("/login", (req, res) => {
       : res.status(401).json({ error: "Incorrect Password!" })
     : res.status(404).json({ error: "User Not Found!" });
 });
+
 app.get("/questions", (req, res) => {
   if (QUESTIONS.length === 0) {
     res.status(204).json({ message: "No Questions" });
@@ -54,7 +55,22 @@ app.get("/questions", (req, res) => {
   res.status(200).json(QUESTIONS);
 });
 
-app.post("/addQuestion", (req, res) => {
+app.get("/question/:id", (req, res) => {
+  // Get specific Question when USER cliked on
+  const currId = Number(req.params.id);
+
+  const questionObj = QUESTIONS?.find((obj) => {
+    return obj.id === currId;
+  });
+
+  if (questionObj) {
+    res.status(200).json(questionObj);
+    return;
+  }
+  res.status(404).json({ error: "Invalid Question Id" });
+});
+
+app.post("/admin/addQuestion", (req, res) => {
   const currObj = req.body;
   if (QUESTIONS.find((obj) => obj.question.title === currObj.title)) {
     res.status(409).json({ error: "Question Already Exist" });
@@ -65,8 +81,15 @@ app.post("/addQuestion", (req, res) => {
   }
 });
 
-app.get("/submissions", (req, res) => {
-  res.send("subs");
+app.get("/submission/:id", (req, res) => {
+  // return the submission of specific problem if submission is present
+  // if not restun unsolved or unattempted
+  
+});
+
+app.post("/submissions", (req, res) => {
+  // let the user submmit a problem, randomly accept or reject the solution
+  // Store the submission in the SUBMISSION array
 });
 
 app.listen(port, () => {
